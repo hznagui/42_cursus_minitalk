@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:12 by hznagui           #+#    #+#             */
-/*   Updated: 2023/01/31 11:56:59 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/01/31 13:27:30 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int argc,char **argv)
         	k = 0;
             while (k < 8)
             {
-        		usleep(500);
+        		usleep(5000);
             	if ((argv[i][a] & 128) == 128)
             		kill(ft_atoi(argv[1]), SIGUSR1);
 				else
