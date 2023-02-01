@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:19 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/01 19:21:21 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/01 21:26:34 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ void    the_converter(int i)
     }
     ft_putchar_fd(ret,1);
 }
+void unicode(int *tmp)
 void test(int type, siginfo_t *info, void *context)
 {
     static char *str;
+    static char *tmp;
     static int client_pid;
     (void)context;
     if(client_pid != info->si_pid)
@@ -47,10 +49,18 @@ void test(int type, siginfo_t *info, void *context)
         str = ft_strjoin(str, "0");
     if (ft_strlen(str) == 8)
     {
-        the_converter(ft_atoi(str));
-        if(str)
-            free(str);
-        str = NULL;
+        
+        if (!(ft_atoi(str) & 128))
+            {    
+                the_converter(ft_atoi(str));
+                if(str)
+                    free(str);
+                str = NULL;
+            }
+        else
+        {
+            tmp = ft_strjoin(tmp, str);
+        }
     }      
 }
 int main(int ac, char **av)

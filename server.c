@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:19 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/01 19:31:57 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/01 21:19:12 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void    the_converter(int i)
     }
     ft_putchar_fd(ret,1);
 }
-int unicode 
 void test(int type, siginfo_t *info, void *context)
 {
     static char *str;
@@ -63,7 +62,6 @@ int main(int ac, char **av)
     ft_putnbr_fd(getpid(),1);
     ft_putchar_fd('\n',1);
     act.sa_sigaction = test;
-    act.sa_flags = SA_SIGINFO;
 
     sigaction(SIGUSR1, &act, NULL);
     sigaction(SIGUSR2, &act, NULL);
