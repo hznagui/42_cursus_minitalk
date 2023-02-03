@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:19 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/01 21:19:12 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/02 18:30:06 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void    the_converter(int i)
     }
     ft_putchar_fd(ret,1);
 }
+
 void test(int type, siginfo_t *info, void *context)
 {
     static char *str;
@@ -52,8 +53,9 @@ void test(int type, siginfo_t *info, void *context)
         if(str)
             free(str);
         str = NULL;
-    }      
+    } 
 }
+
 int main(int ac, char **av)
 {
     (void)av;
