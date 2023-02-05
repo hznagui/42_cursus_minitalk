@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:12 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/05 18:58:50 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/05 21:41:11 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,4 @@ int	main(int argc, char **argv)
 	}
 	signal(SIGUSR1, test);
 	sending_null(server_id);
-	// while (1)
-	// 	pause();
 }
