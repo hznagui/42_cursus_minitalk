@@ -6,45 +6,36 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:19 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/05 20:16:38 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/05 21:38:30 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk_bonus.h"
 
-void	continue_func(int str, int timer, char *ret, int index)
-{
-}
-
-void	unicode_handler(int str)
+int	unicode_handler(int str)
 {
 	static int	timer;
 	static char	*ret;
 	static int	index;
 
 	if (str == -1)
-		ft_clean(&timer, &ret, &index);
-	else if (!unicode(str) && !timer)
-		ft_putchar_fd(str, 1);
-	else if (unicode(str) && !timer)
+		return (ft_clean(&timer, &ret, &index), 0);
+	if (!unicode(str) && !timer)
+		return (ft_putchar_fd(str, 1), 0);
+	if (unicode(str) && !(timer))
 	{
 		timer = unicode(str) - 1;
-		ret = malloc ((unicode(str) + 1) * sizeof(char));
+		ret = malloc((unicode(str) + 1) * sizeof(char));
 		if (!(ret))
 			exit(1);
-		ret[index++] = str;
+		return (ret[(index)++] = str, 0);
 	}
-	else
-	{
-		timer--;
-		ret[index++] = str;
-		if (!timer)
-		{
-			ret[index] = '\0';
-			ft_putstr_fd(ret, 1);
-			ft_clean(&timer, &ret, &index);
-		}
-	}
+	(timer)--;
+	ret[(index)++] = str;
+	if (!(timer))
+		return (ret[index] = '\0', ft_putstr_fd(ret, 1), ft_clean(&timer,
+				&ret, &index), 0);
+	return (0);
 }
 
 int	the_converter(int i, int client_pid)
