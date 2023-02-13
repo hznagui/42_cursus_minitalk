@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:12 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/05 17:44:47 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/06 12:42:25 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	int		a;
-	int		k;
 	int		server_id;
 	char	c;
 

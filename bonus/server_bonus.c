@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:19 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/05 21:38:30 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/06 09:27:37 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,13 @@ int	the_converter(int i, int client_pid)
 		i = i / 10;
 	}
 	if (!ret)
-		kill(client_pid, SIGUSR1);
+		return (kill(client_pid, SIGUSR1), -1);
 	return (ret);
 }
 
 void	test(int type, siginfo_t *info, void *context)
 {
 	static char	*str;
-	static char	*tmp;
 	static int	client_pid;
 
 	(void)context;
@@ -77,6 +76,8 @@ void	test(int type, siginfo_t *info, void *context)
 		str = ft_strjoin(str, "1");
 	else if (type == 31)
 		str = ft_strjoin(str, "0");
+	if (!str)
+		return (unicode_handler(-1), exit(1));
 	if (ft_strlen(str) == 8)
 	{
 		unicode_handler(the_converter(ft_atoi(str), client_pid));

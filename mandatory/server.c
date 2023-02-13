@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:19 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/05 17:44:54 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/06 12:43:05 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	main(int ac, char **av)
 	struct sigaction	act;
 
 	(void)av;
+	(void)ac;
 	ft_putnbr_fd(getpid(), 1);
 	ft_putchar_fd('\n', 1);
 	act.sa_sigaction = test;

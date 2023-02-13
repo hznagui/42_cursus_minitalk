@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 11:39:12 by hznagui           #+#    #+#             */
-/*   Updated: 2023/02/05 21:41:11 by hznagui          ###   ########.fr       */
+/*   Updated: 2023/02/06 13:16:14 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	int		a;
-	int		k;
 	int		server_id;
 	char	c;
 
@@ -67,7 +66,7 @@ int	main(int argc, char **argv)
 		while (argv[i][a] != '\0')
 		{
 			c = argv[2][a];
-			the_sender(c, server_id);
+			the_sender(&c, server_id);
 			a++;
 		}
 		i++;
